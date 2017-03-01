@@ -8,3 +8,5 @@ Decode
 ========
 
 ![gif](https://github.com/yylyingy/ndkgif/blob/master/app/src/main/assets/display.gif)
+
+![gif](https://github.com/yylyingy/ndkgif/blob/master/app/src/main/assets/sample1.gif)
