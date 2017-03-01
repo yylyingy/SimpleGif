@@ -57,10 +57,19 @@ public class GifDecoder {
         return height;
     }
 
+    /**
+     *
+     * @return pictures's num.
+     */
     public int frameNum() {
         return frameNum;
     }
 
+    /**
+     * To get one picture's bitmap
+     * @param idx the picture's index
+     * @return picture's bitmap .
+     */
     public Bitmap frame(int idx) {
         if (0 == frameNum) {
             return null;
@@ -68,6 +77,11 @@ public class GifDecoder {
         return bitmaps[idx % frameNum];
     }
 
+    /**
+     * Current picture's display time
+     * @param idx the picture index
+     * @return The display time
+     */
     public int delay(int idx) {
         if (0 == frameNum) {
             return 0;
