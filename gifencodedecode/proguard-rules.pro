@@ -15,3 +15,14 @@
 #-keepclassmembers class fqcn.of.javascript.interface.for.webview {
 #   public *;
 #}
+-ignorewarnings
+-optimizationpasses 5
+-dontusemixedcaseclassnames
+-verbose
+
+-keep public class io.github.yylyingy.gifencodedecode.GifDecoder{*;}
+-keep public class io.github.yylyingy.gifencodedecode.GifEncoder{*;}
+#native methods
+-keepclasseswithmembernames class * {
+                            native <methods>;
+                            }
