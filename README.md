@@ -5,7 +5,7 @@ GIF library built with cmake for usage with android gradle build system.
 This library refer to android-ndk-gif.
 
 Blog
-![blog](http://blog.csdn.net/qq372848728/article/details/59104104)
+[blog](http://blog.csdn.net/qq372848728/article/details/59104104)
 
 Decode
 ========
