@@ -26,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
 
     private boolean useDither = true;
     private static final int DISPLAY_GIF = 0x123;
+    private GifDecoder gifDecoder = new GifDecoder();
     ImageView imageView;
     private Handler mHandler = new Handler(){
         @Override
@@ -52,7 +53,6 @@ public class MainActivity extends AppCompatActivity {
             public void run() {
                 String destFile = setupSampleFile();
 
-                final GifDecoder gifDecoder = new GifDecoder();
                 final boolean isSucceeded = gifDecoder.load(destFile);
 //                runOnUiThread(new Runnable() {
 //                    @Override
@@ -98,6 +98,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
+        gifDecoder.destroy();
     }
 
     private String setupSampleFile() {
