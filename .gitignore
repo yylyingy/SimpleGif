@@ -7,3 +7,6 @@
 /build
 /captures
 .externalNativeBuild
+/app/build/*
+!/app/build/outputs
+/gifencodedecode/build
