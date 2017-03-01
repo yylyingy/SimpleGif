@@ -9,6 +9,7 @@ import android.os.Handler;
 import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.Toast;
@@ -46,6 +47,7 @@ public class MainActivity extends AppCompatActivity {
         imageView = (ImageView) findViewById(R.id.image_view);
 
         new Thread(new Runnable() {
+
             @Override
             public void run() {
                 String destFile = setupSampleFile();
@@ -55,20 +57,34 @@ public class MainActivity extends AppCompatActivity {
 //                runOnUiThread(new Runnable() {
 //                    @Override
 //                    public void run() {
+                long displayTime = 0;
+                long startDisplayTime = 0;
+                long lostTime = 0;
+
                 while (true){
                     if (isSucceeded) {
                         for (int i = 1;i <= gifDecoder.frameNum();i ++){
+                            long wast = System.currentTimeMillis();
                             Bitmap bitmap = gifDecoder.frame(i);
                             Message message = Message.obtain();
                             message.what = DISPLAY_GIF;
                             message.obj = bitmap;
                             mHandler.sendMessage(message);
-                            try {
-                                Thread.sleep(gifDecoder.delay(i));
-                            } catch (InterruptedException e) {
-                                e.printStackTrace();
+                            startDisplayTime = System.currentTimeMillis();
+                            displayTime = gifDecoder.delay(i);
+                            while ((lostTime) < displayTime ){
+                                lostTime = System.currentTimeMillis() - startDisplayTime;
                             }
+                            lostTime = 0;
+                            wast = System.currentTimeMillis() - wast;
+                            Log.d(getLocalClassName(),"wast" + wast);
+//                                try {
+//                                    Thread.sleep(gifDecoder.delay(i));
+//                                } catch (InterruptedException e) {
+//                                    e.printStackTrace();
+//                                }
                         }
+
                     } else {
                         Toast.makeText(MainActivity.this, "Failed", Toast.LENGTH_SHORT).show();
                     }
@@ -77,6 +93,11 @@ public class MainActivity extends AppCompatActivity {
 //                });
             }
         }).start();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
     }
 
     private String setupSampleFile() {
