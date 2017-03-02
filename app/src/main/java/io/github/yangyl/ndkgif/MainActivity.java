@@ -28,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
     private static final int DISPLAY_GIF = 0x123;
     private GifDecoder gifDecoder = new GifDecoder();
     ImageView imageView;
+    private boolean isThreadNeedRunnine = true;
     private Handler mHandler = new Handler(){
         @Override
         public void handleMessage(Message msg) {
@@ -60,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
                 long displayTime = 0;
                 long startDisplayTime = 0;
                 long lostTime = 0;
-                while (true){
+                while (isThreadNeedRunnine){
                     if (isSucceeded) {
                         for (int i = 1;i <= gifDecoder.frameNum();i ++){
                             long wast = System.currentTimeMillis();
@@ -97,6 +98,7 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onDestroy() {
+        isThreadNeedRunnine = false;
         gifDecoder.destroy();
         super.onDestroy();
     }
