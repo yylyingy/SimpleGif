@@ -28,9 +28,11 @@ public class GifDecoder {
     private int[] delays = new int[0];
     private int frameNum;
     private long handle;
+    private boolean isDestroy = true;
 
-    public boolean load(String fileName) {
+    public synchronized boolean load(String fileName) {
         handle = nativeInit();
+        isDestroy = false;
         if (!nativeLoad(handle, fileName)) {
             nativeClose(handle);
             return false;
@@ -58,8 +60,9 @@ public class GifDecoder {
         return height;
     }
 
-    public void destroy(){
+    public synchronized void destroy(){
         nativeClose(handle);
+        isDestroy = true;
     }
 
     /**
@@ -76,10 +79,16 @@ public class GifDecoder {
      * @return picture's bitmap .
      */
     public Bitmap frame(int idx) {
+        Bitmap bitmap;
         if (0 == frameNum) {
             return null;
         }
-        return nativeGetFrame(handle,idx % frameNum);
+        if (isDestroy){
+            bitmap = null;
+        }else {
+            bitmap = nativeGetFrame(handle,idx % frameNum);
+        }
+        return bitmap;
     }
 
     /**

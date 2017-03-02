@@ -60,12 +60,12 @@ public class MainActivity extends AppCompatActivity {
                 long displayTime = 0;
                 long startDisplayTime = 0;
                 long lostTime = 0;
-
                 while (true){
                     if (isSucceeded) {
                         for (int i = 1;i <= gifDecoder.frameNum();i ++){
                             long wast = System.currentTimeMillis();
                             Bitmap bitmap = gifDecoder.frame(i);
+                            if (bitmap == null)break;
                             Message message = Message.obtain();
                             message.what = DISPLAY_GIF;
                             message.obj = bitmap;
@@ -97,8 +97,8 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onDestroy() {
-        super.onDestroy();
         gifDecoder.destroy();
+        super.onDestroy();
     }
 
     private String setupSampleFile() {
