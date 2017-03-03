@@ -47,6 +47,9 @@ JNIEXPORT jint JNICALL Java_io_github_yylyingy_gifencodedecode_GifDecoder_native
 JNIEXPORT jobject JNICALL Java_io_github_yylyingy_gifencodedecode_GifDecoder_nativeGetFrame
   (JNIEnv *, jobject, jlong, jint);
 
+JNIEXPORT jobject JNICALL Java_io_github_yylyingy_gifencodedecode_GifDecoder_renderFrame
+        (JNIEnv *env, jobject, jlong handle, jint idx,jobject bitmap);
+
 /*
  * Class:     io_github_yylyingy_gifencodedecode_GifDecoder
  * Method:    nativeGetDelay

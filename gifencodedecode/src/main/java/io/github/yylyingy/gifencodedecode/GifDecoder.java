@@ -16,6 +16,7 @@ public class GifDecoder {
     private native int nativeGetFrameCount(long handle);
 
     private native Bitmap nativeGetFrame(long handle, int n);
+    private native Bitmap renderFrame(long handle, int n,Bitmap bitmap);
     private native int nativeGetDelay(long handle, int n);
 
     private native int nativeGetWidth(long handle);
@@ -25,6 +26,7 @@ public class GifDecoder {
     private int height = 0;
 
     private Bitmap[] bitmaps = new Bitmap[0];
+    private Bitmap   frame;
     private int[] delays = new int[0];
     private int frameNum;
     private long handle;
@@ -79,16 +81,23 @@ public class GifDecoder {
      * @return picture's bitmap .
      */
     public Bitmap frame(int idx) {
-        Bitmap bitmap;
+        if (frame == null){
+            frame = Bitmap.createBitmap(nativeGetWidth(handle),
+                    nativeGetHeight(handle),Bitmap.Config.ARGB_8888);
+        }else {
+            frame.prepareToDraw();
+//            frame.recycle();
+        }
         if (0 == frameNum) {
             return null;
         }
         if (isDestroy){
-            bitmap = null;
+            frame = null;
         }else {
-            bitmap = nativeGetFrame(handle,idx % frameNum);
+//            frame = nativeGetFrame(handle,idx % frameNum);
+            renderFrame(handle,idx % frameNum,frame);
         }
-        return bitmap;
+        return frame;
     }
 
     /**

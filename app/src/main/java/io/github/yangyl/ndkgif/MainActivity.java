@@ -1,9 +1,14 @@
 package io.github.yangyl.ndkgif;
 
+import android.content.Intent;
 import android.content.res.AssetManager;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
+import android.graphics.Matrix;
 import android.graphics.Paint;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
 import android.os.Environment;
 import android.os.Handler;
 import android.os.Message;
@@ -13,6 +18,8 @@ import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.Toast;
+
+//import com.bumptech.glide.Glide;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -28,7 +35,10 @@ public class MainActivity extends AppCompatActivity {
     private static final int DISPLAY_GIF = 0x123;
     private GifDecoder gifDecoder = new GifDecoder();
     ImageView imageView;
+    Object oj;
     private boolean isThreadNeedRunnine = true;
+    Bitmap mBitmap = null;
+    Drawable mDrawable = new BitmapDrawable(mBitmap);
     private Handler mHandler = new Handler(){
         @Override
         public void handleMessage(Message msg) {
@@ -47,6 +57,13 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         imageView = (ImageView) findViewById(R.id.image_view);
+//        Glide.with(this).load(setupSampleFile()).into(imageView);
+        imageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this,Main2Activity.class));
+            }
+        });
 
         new Thread(new Runnable() {
 
@@ -61,12 +78,18 @@ public class MainActivity extends AppCompatActivity {
                 long displayTime = 0;
                 long startDisplayTime = 0;
                 long lostTime = 0;
+                Bitmap bitmap = null;
                 while (isThreadNeedRunnine){
                     if (isSucceeded) {
                         for (int i = 1;i <= gifDecoder.frameNum();i ++){
                             long wast = System.currentTimeMillis();
-                            Bitmap bitmap = gifDecoder.frame(i);
+
+                            bitmap = gifDecoder.frame(i);
                             if (bitmap == null)break;
+//                            Matrix matrix = new Matrix();
+//                            matrix.postScale(0.5f,0.5f);
+//                            bitmap = Bitmap.createBitmap(bitmap,0,0,bitmap.getWidth(),bitmap.getHeight(),
+//                                    matrix,true);
                             Message message = Message.obtain();
                             message.what = DISPLAY_GIF;
                             message.obj = bitmap;
@@ -78,7 +101,6 @@ public class MainActivity extends AppCompatActivity {
                             }
                             lostTime = 0;
                             wast = System.currentTimeMillis() - wast;
-                            Log.d(getLocalClassName(),"wast" + wast);
 //                                try {
 //                                    Thread.sleep(gifDecoder.delay(i));
 //                                } catch (InterruptedException e) {

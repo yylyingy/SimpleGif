@@ -10,3 +10,4 @@
 /app/build/*
 !/app/build/outputs
 /gifencodedecode/build
+/app/src/main/java/com/bumptech

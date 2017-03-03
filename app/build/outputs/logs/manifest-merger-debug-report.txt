@@ -1,6 +1,6 @@
 -- Merging decision tree log ---
 manifest
-ADDED from D:\Android\WorkSpaseForAS\NdkGif\app\src\main\AndroidManifest.xml:2:1-20:12
+ADDED from D:\Android\WorkSpaseForAS\NdkGif\app\src\main\AndroidManifest.xml:2:1-25:12
 	package
 		ADDED from D:\Android\WorkSpaseForAS\NdkGif\app\src\main\AndroidManifest.xml:3:11-44
 		INJECTED from D:\Android\WorkSpaseForAS\NdkGif\app\src\main\AndroidManifest.xml
@@ -14,17 +14,19 @@ ADDED from D:\Android\WorkSpaseForAS\NdkGif\app\src\main\AndroidManifest.xml:2:1
 		INJECTED from D:\Android\WorkSpaseForAS\NdkGif\app\src\main\AndroidManifest.xml
 		INJECTED from D:\Android\WorkSpaseForAS\NdkGif\app\src\main\AndroidManifest.xml
 application
-ADDED from D:\Android\WorkSpaseForAS\NdkGif\app\src\main\AndroidManifest.xml:5:5-18:19
-MERGED from [NdkGif:gifencodedecode:unspecified] D:\Android\WorkSpaseForAS\NdkGif\app\build\intermediates\exploded-aar\NdkGif\gifencodedecode\unspecified\AndroidManifest.xml:11:5-15:19
-MERGED from [com.android.support:appcompat-v7:25.2.0] D:\Android\WorkSpaseForAS\NdkGif\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\25.2.0\AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:support-v4:25.2.0] D:\Android\WorkSpaseForAS\NdkGif\app\build\intermediates\exploded-aar\com.android.support\support-v4\25.2.0\AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:support-fragment:25.2.0] D:\Android\WorkSpaseForAS\NdkGif\app\build\intermediates\exploded-aar\com.android.support\support-fragment\25.2.0\AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:support-media-compat:25.2.0] D:\Android\WorkSpaseForAS\NdkGif\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\25.2.0\AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:support-core-ui:25.2.0] D:\Android\WorkSpaseForAS\NdkGif\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\25.2.0\AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:support-core-utils:25.2.0] D:\Android\WorkSpaseForAS\NdkGif\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\25.2.0\AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:animated-vector-drawable:25.2.0] D:\Android\WorkSpaseForAS\NdkGif\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\25.2.0\AndroidManifest.xml:22:5-20
-MERGED from [com.android.support:support-vector-drawable:25.2.0] D:\Android\WorkSpaseForAS\NdkGif\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\25.2.0\AndroidManifest.xml:23:5-20
-MERGED from [com.android.support:support-compat:25.2.0] D:\Android\WorkSpaseForAS\NdkGif\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.2.0\AndroidManifest.xml:25:5-20
+ADDED from D:\Android\WorkSpaseForAS\NdkGif\app\src\main\AndroidManifest.xml:5:5-23:19
+MERGED from [com.android.support:design:25.2.0] C:\Users\Yangyl\.android\build-cache\d2742461611c13092382f49c2b3c6c233208bb2b\output\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:transition:25.2.0] C:\Users\Yangyl\.android\build-cache\d91d60ecff8dbbf4ea5ae042c1b9526a1e2a3a7b\output\AndroidManifest.xml:22:5-20
+MERGED from [NdkGif:gifencodedecode:unspecified] D:\Android\WorkSpaseForAS\NdkGif\gifencodedecode\build\intermediates\bundles\default\AndroidManifest.xml:11:5-15:19
+MERGED from [com.android.support:appcompat-v7:25.2.0] C:\Users\Yangyl\.android\build-cache\10b892624f81421f2d3afc9e8b699f8d9ff2b126\output\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-v4:25.2.0] C:\Users\Yangyl\.android\build-cache\b6abf98d1e73986e61f5d135e73ac1ec696347b9\output\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-fragment:25.2.0] C:\Users\Yangyl\.android\build-cache\1d44e39ded0c8aa8b4783f2af2f0b50b8ad79097\output\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-media-compat:25.2.0] C:\Users\Yangyl\.android\build-cache\c94260adf48f9dc20fbc65c3839736b246da110d\output\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-core-ui:25.2.0] C:\Users\Yangyl\.android\build-cache\1c676d3eb7a6f2aefebe9cdbfb69f3158a3fb5ef\output\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-core-utils:25.2.0] C:\Users\Yangyl\.android\build-cache\d68f993e698044b5d741610a5b296fd40698f071\output\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:animated-vector-drawable:25.2.0] C:\Users\Yangyl\.android\build-cache\acc02690453ea58797087c1766eb14dab2407590\output\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:support-vector-drawable:25.2.0] C:\Users\Yangyl\.android\build-cache\fd8611db6f63c89a306525bcad748070ecaf585e\output\AndroidManifest.xml:23:5-20
+MERGED from [com.android.support:support-compat:25.2.0] C:\Users\Yangyl\.android\build-cache\876748970359b8b16d6dfb3e1c0dc5f0948cdfea\output\AndroidManifest.xml:25:5-20
 	android:label
 		ADDED from D:\Android\WorkSpaseForAS\NdkGif\app\src\main\AndroidManifest.xml:8:9-41
 	android:supportsRtl
@@ -49,20 +51,31 @@ category#android.intent.category.LAUNCHER
 ADDED from D:\Android\WorkSpaseForAS\NdkGif\app\src\main\AndroidManifest.xml:15:17-76
 	android:name
 		ADDED from D:\Android\WorkSpaseForAS\NdkGif\app\src\main\AndroidManifest.xml:15:27-74
+activity#io.github.yangyl.ndkgif.Main2Activity
+ADDED from D:\Android\WorkSpaseForAS\NdkGif\app\src\main\AndroidManifest.xml:18:9-22:20
+	android:label
+		ADDED from D:\Android\WorkSpaseForAS\NdkGif\app\src\main\AndroidManifest.xml:20:13-57
+	android:theme
+		ADDED from D:\Android\WorkSpaseForAS\NdkGif\app\src\main\AndroidManifest.xml:21:13-56
+	android:name
+		ADDED from D:\Android\WorkSpaseForAS\NdkGif\app\src\main\AndroidManifest.xml:19:13-42
 uses-sdk
 INJECTED from D:\Android\WorkSpaseForAS\NdkGif\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
-MERGED from [NdkGif:gifencodedecode:unspecified] D:\Android\WorkSpaseForAS\NdkGif\app\build\intermediates\exploded-aar\NdkGif\gifencodedecode\unspecified\AndroidManifest.xml:7:5-9:41
-MERGED from [com.android.support:appcompat-v7:25.2.0] D:\Android\WorkSpaseForAS\NdkGif\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\25.2.0\AndroidManifest.xml:21:5-23:78
-MERGED from [com.android.support:support-v4:25.2.0] D:\Android\WorkSpaseForAS\NdkGif\app\build\intermediates\exploded-aar\com.android.support\support-v4\25.2.0\AndroidManifest.xml:21:5-23:54
-MERGED from [com.android.support:support-fragment:25.2.0] D:\Android\WorkSpaseForAS\NdkGif\app\build\intermediates\exploded-aar\com.android.support\support-fragment\25.2.0\AndroidManifest.xml:21:5-23:60
-MERGED from [com.android.support:support-media-compat:25.2.0] D:\Android\WorkSpaseForAS\NdkGif\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\25.2.0\AndroidManifest.xml:21:5-23:63
-MERGED from [com.android.support:support-core-ui:25.2.0] D:\Android\WorkSpaseForAS\NdkGif\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\25.2.0\AndroidManifest.xml:21:5-23:58
-MERGED from [com.android.support:support-core-utils:25.2.0] D:\Android\WorkSpaseForAS\NdkGif\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\25.2.0\AndroidManifest.xml:21:5-23:61
-MERGED from [com.android.support:animated-vector-drawable:25.2.0] D:\Android\WorkSpaseForAS\NdkGif\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\25.2.0\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-vector-drawable:25.2.0] D:\Android\WorkSpaseForAS\NdkGif\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\25.2.0\AndroidManifest.xml:21:5-43
-MERGED from [com.android.support:support-compat:25.2.0] D:\Android\WorkSpaseForAS\NdkGif\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.2.0\AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:design:25.2.0] C:\Users\Yangyl\.android\build-cache\d2742461611c13092382f49c2b3c6c233208bb2b\output\AndroidManifest.xml:21:5-23:62
+MERGED from [com.android.support:recyclerview-v7:25.2.0] C:\Users\Yangyl\.android\build-cache\cec5b644f44ef3dfb62bb17901dd9f7ca56bff24\output\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:transition:25.2.0] C:\Users\Yangyl\.android\build-cache\d91d60ecff8dbbf4ea5ae042c1b9526a1e2a3a7b\output\AndroidManifest.xml:20:5-44
+MERGED from [NdkGif:gifencodedecode:unspecified] D:\Android\WorkSpaseForAS\NdkGif\gifencodedecode\build\intermediates\bundles\default\AndroidManifest.xml:7:5-9:41
+MERGED from [com.android.support:appcompat-v7:25.2.0] C:\Users\Yangyl\.android\build-cache\10b892624f81421f2d3afc9e8b699f8d9ff2b126\output\AndroidManifest.xml:21:5-23:78
+MERGED from [com.android.support:support-v4:25.2.0] C:\Users\Yangyl\.android\build-cache\b6abf98d1e73986e61f5d135e73ac1ec696347b9\output\AndroidManifest.xml:21:5-23:54
+MERGED from [com.android.support:support-fragment:25.2.0] C:\Users\Yangyl\.android\build-cache\1d44e39ded0c8aa8b4783f2af2f0b50b8ad79097\output\AndroidManifest.xml:21:5-23:60
+MERGED from [com.android.support:support-media-compat:25.2.0] C:\Users\Yangyl\.android\build-cache\c94260adf48f9dc20fbc65c3839736b246da110d\output\AndroidManifest.xml:21:5-23:63
+MERGED from [com.android.support:support-core-ui:25.2.0] C:\Users\Yangyl\.android\build-cache\1c676d3eb7a6f2aefebe9cdbfb69f3158a3fb5ef\output\AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-core-utils:25.2.0] C:\Users\Yangyl\.android\build-cache\d68f993e698044b5d741610a5b296fd40698f071\output\AndroidManifest.xml:21:5-23:61
+MERGED from [com.android.support:animated-vector-drawable:25.2.0] C:\Users\Yangyl\.android\build-cache\acc02690453ea58797087c1766eb14dab2407590\output\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:25.2.0] C:\Users\Yangyl\.android\build-cache\fd8611db6f63c89a306525bcad748070ecaf585e\output\AndroidManifest.xml:21:5-43
+MERGED from [com.android.support:support-compat:25.2.0] C:\Users\Yangyl\.android\build-cache\876748970359b8b16d6dfb3e1c0dc5f0948cdfea\output\AndroidManifest.xml:21:5-23:58
 	tools:overrideLibrary
-		ADDED from [com.android.support:appcompat-v7:25.2.0] D:\Android\WorkSpaseForAS\NdkGif\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\25.2.0\AndroidManifest.xml:23:9-75
+		ADDED from [com.android.support:design:25.2.0] C:\Users\Yangyl\.android\build-cache\d2742461611c13092382f49c2b3c6c233208bb2b\output\AndroidManifest.xml:23:9-59
 	android:targetSdkVersion
 		INJECTED from D:\Android\WorkSpaseForAS\NdkGif\app\src\main\AndroidManifest.xml
 		INJECTED from D:\Android\WorkSpaseForAS\NdkGif\app\src\main\AndroidManifest.xml

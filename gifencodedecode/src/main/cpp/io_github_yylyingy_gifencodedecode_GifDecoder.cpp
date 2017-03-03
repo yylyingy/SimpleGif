@@ -56,12 +56,29 @@ JNIEXPORT jobject JNICALL Java_io_github_yylyingy_gifencodedecode_GifDecoder_nat
     if (AndroidBitmap_lockPixels(env, jBmpObj, &bitmapPixels) < 0) {
         return 0;
     }
-    uint32_t* src = (uint32_t*) bitmapPixels;
+    //uint32_t* src = (uint32_t*) bitmapPixels;
     int stride = imgWidth * 4;
     int pixelsCount = stride * imgHeight;
     memcpy(bitmapPixels, decoder->getFrame(idx), pixelsCount);
     AndroidBitmap_unlockPixels(env, jBmpObj);
 
+    return jBmpObj;
+}
+
+JNIEXPORT jobject JNICALL Java_io_github_yylyingy_gifencodedecode_GifDecoder_renderFrame
+        (JNIEnv *env, jobject, jlong handle, jint idx,jobject jBmpObj){
+    GifDecoder* decoder = (GifDecoder*)handle;
+    int imgWidth = decoder->getWidth();
+    int imgHeight = decoder->getHeight();
+    void* bitmapPixels;
+    if (AndroidBitmap_lockPixels(env, jBmpObj, &bitmapPixels) < 0) {
+        return 0;
+    }
+    //uint32_t* src = (uint32_t*) bitmapPixels;
+    int stride = imgWidth * 4;
+    int pixelsCount = stride * imgHeight;
+    memcpy(bitmapPixels, decoder->getFrame(idx), pixelsCount);
+    AndroidBitmap_unlockPixels(env, jBmpObj);
     return jBmpObj;
 }
 
