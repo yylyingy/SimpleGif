@@ -101,11 +101,11 @@ public class MainActivity extends AppCompatActivity {
                             }
                             lostTime = 0;
                             wast = System.currentTimeMillis() - wast;
-//                                try {
-//                                    Thread.sleep(gifDecoder.delay(i));
-//                                } catch (InterruptedException e) {
-//                                    e.printStackTrace();
-//                                }
+                                try {
+                                    Thread.sleep(gifDecoder.delay(i));
+                                } catch (InterruptedException e) {
+                                    e.printStackTrace();
+                                }
                         }
 
                     } else {

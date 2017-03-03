@@ -80,7 +80,7 @@ public class GifDecoder {
      * @param idx the picture's index
      * @return picture's bitmap .
      */
-    public Bitmap frame(int idx) {
+    public synchronized Bitmap frame(int idx) {
         if (frame == null){
             frame = Bitmap.createBitmap(nativeGetWidth(handle),
                     nativeGetHeight(handle),Bitmap.Config.ARGB_8888);
