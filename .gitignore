@@ -9,4 +9,6 @@
 .externalNativeBuild
 /app/build
 /SimpleGif/build
-/app/src/main/java/com/bumptech
+/sample/build
+/SimpleGif/build
+/sample/src/main/java/com/bumptech

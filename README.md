@@ -1,5 +1,5 @@
 # SimpleGif
-Android NDK GIF Library
+An Android NDK GIF Library
 ========
 GIF library built with cmake for usage with android gradle build system.
 This c source code refer to android-ndk-gif.
@@ -20,7 +20,7 @@ Simple use cases will look something like this:
 
   SimpleGif.with(this).load("/sdcard/simple.gif").into(imageView);
 }
-
+```
 
 
 Decode

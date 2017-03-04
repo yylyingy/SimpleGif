@@ -1,1 +1,1 @@
-include ':app', ':SimpleGif'
+include ':sample', ':library'
