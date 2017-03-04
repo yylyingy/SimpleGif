@@ -56,20 +56,20 @@
         "source": "C:\\Users\\Yangyl\\.android\\build-cache\\10b892624f81421f2d3afc9e8b699f8d9ff2b126\\output\\res\\layout\\notification_template_part_time.xml"
     },
     {
-        "merged": "D:\\Android\\WorkSpaseForAS\\NdkGif\\app\\build\\intermediates\\res\\merged\\debug\\layout\\select_dialog_item_material.xml",
-        "source": "C:\\Users\\Yangyl\\.android\\build-cache\\10b892624f81421f2d3afc9e8b699f8d9ff2b126\\output\\res\\layout\\select_dialog_item_material.xml"
-    },
-    {
         "merged": "D:\\Android\\WorkSpaseForAS\\NdkGif\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_text_input_password_icon.xml",
         "source": "C:\\Users\\Yangyl\\.android\\build-cache\\d2742461611c13092382f49c2b3c6c233208bb2b\\output\\res\\layout\\design_text_input_password_icon.xml"
     },
     {
-        "merged": "D:\\Android\\WorkSpaseForAS\\NdkGif\\app\\build\\intermediates\\res\\merged\\debug\\layout\\select_dialog_singlechoice_material.xml",
-        "source": "C:\\Users\\Yangyl\\.android\\build-cache\\10b892624f81421f2d3afc9e8b699f8d9ff2b126\\output\\res\\layout\\select_dialog_singlechoice_material.xml"
+        "merged": "D:\\Android\\WorkSpaseForAS\\NdkGif\\app\\build\\intermediates\\res\\merged\\debug\\layout\\select_dialog_item_material.xml",
+        "source": "C:\\Users\\Yangyl\\.android\\build-cache\\10b892624f81421f2d3afc9e8b699f8d9ff2b126\\output\\res\\layout\\select_dialog_item_material.xml"
     },
     {
         "merged": "D:\\Android\\WorkSpaseForAS\\NdkGif\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_layout_snackbar_include.xml",
         "source": "C:\\Users\\Yangyl\\.android\\build-cache\\d2742461611c13092382f49c2b3c6c233208bb2b\\output\\res\\layout\\design_layout_snackbar_include.xml"
+    },
+    {
+        "merged": "D:\\Android\\WorkSpaseForAS\\NdkGif\\app\\build\\intermediates\\res\\merged\\debug\\layout\\select_dialog_singlechoice_material.xml",
+        "source": "C:\\Users\\Yangyl\\.android\\build-cache\\10b892624f81421f2d3afc9e8b699f8d9ff2b126\\output\\res\\layout\\select_dialog_singlechoice_material.xml"
     },
     {
         "merged": "D:\\Android\\WorkSpaseForAS\\NdkGif\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_bar_view_list_nav_layout.xml",

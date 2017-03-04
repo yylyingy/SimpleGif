@@ -71,57 +71,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-//        new Thread(new Runnable() {
-//
-//            @Override
-//            public void run() {
-//                String destFile = setupSampleFile();
-//
-//                final boolean isSucceeded = gifDecoder.load(destFile);
-////                runOnUiThread(new Runnable() {
-////                    @Override
-////                    public void run() {
-//                long displayTime = 0;
-//                long startDisplayTime = 0;
-//                long lostTime = 0;
-//                Bitmap bitmap = null;
-//                while (isThreadNeedRunnine){
-//                    if (isSucceeded) {
-//                        for (int i = 1;i <= gifDecoder.frameNum();i ++){
-//                            long wast = System.currentTimeMillis();
-//
-//                            bitmap = gifDecoder.frame(i);
-//                            if (bitmap == null)break;
-////                            Matrix matrix = new Matrix();
-////                            matrix.postScale(0.5f,0.5f);
-////                            bitmap = Bitmap.createBitmap(bitmap,0,0,bitmap.getWidth(),bitmap.getHeight(),
-////                                    matrix,true);
-//                            Message message = Message.obtain();
-//                            message.what = DISPLAY_GIF;
-//                            message.obj = bitmap;
-//                            mHandler.sendMessage(message);
-//                            startDisplayTime = System.currentTimeMillis();
-//                            displayTime = gifDecoder.delay(i);
-//                            while ((lostTime) < displayTime ){
-//                                lostTime = System.currentTimeMillis() - startDisplayTime;
-//                            }
-//                            lostTime = 0;
-//                            wast = System.currentTimeMillis() - wast;
-//                                try {
-//                                    Thread.sleep(gifDecoder.delay(i));
-//                                } catch (InterruptedException e) {
-//                                    e.printStackTrace();
-//                                }
-//                        }
-//
-//                    } else {
-//                        Toast.makeText(MainActivity.this, "Failed", Toast.LENGTH_SHORT).show();
-//                    }
-//                }
-////                    }
-////                });
-//            }
-//        }).start();
+
     }
 
     @Override
