@@ -7,7 +7,6 @@
 /build
 /captures
 .externalNativeBuild
-/app/build/*
-!/app/build/outputs
-/gifencodedecode/build
+
+/SimpleGif/build
 /app/src/main/java/com/bumptech

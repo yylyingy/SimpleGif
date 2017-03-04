@@ -17,7 +17,7 @@ application
 ADDED from D:\Android\WorkSpaseForAS\NdkGif\app\src\main\AndroidManifest.xml:5:5-23:19
 MERGED from [com.android.support:design:25.2.0] C:\Users\Yangyl\.android\build-cache\d2742461611c13092382f49c2b3c6c233208bb2b\output\AndroidManifest.xml:25:5-20
 MERGED from [com.android.support:transition:25.2.0] C:\Users\Yangyl\.android\build-cache\d91d60ecff8dbbf4ea5ae042c1b9526a1e2a3a7b\output\AndroidManifest.xml:22:5-20
-MERGED from [NdkGif:gifencodedecode:unspecified] D:\Android\WorkSpaseForAS\NdkGif\gifencodedecode\build\intermediates\bundles\default\AndroidManifest.xml:11:5-15:19
+MERGED from [NdkGif:SimpleGif:unspecified] D:\Android\WorkSpaseForAS\NdkGif\SimpleGif\build\intermediates\bundles\default\AndroidManifest.xml:11:5-15:19
 MERGED from [com.android.support:appcompat-v7:25.2.0] C:\Users\Yangyl\.android\build-cache\10b892624f81421f2d3afc9e8b699f8d9ff2b126\output\AndroidManifest.xml:25:5-20
 MERGED from [com.android.support:support-v4:25.2.0] C:\Users\Yangyl\.android\build-cache\b6abf98d1e73986e61f5d135e73ac1ec696347b9\output\AndroidManifest.xml:25:5-20
 MERGED from [com.android.support:support-fragment:25.2.0] C:\Users\Yangyl\.android\build-cache\1d44e39ded0c8aa8b4783f2af2f0b50b8ad79097\output\AndroidManifest.xml:25:5-20
@@ -27,6 +27,7 @@ MERGED from [com.android.support:support-core-utils:25.2.0] C:\Users\Yangyl\.and
 MERGED from [com.android.support:animated-vector-drawable:25.2.0] C:\Users\Yangyl\.android\build-cache\acc02690453ea58797087c1766eb14dab2407590\output\AndroidManifest.xml:22:5-20
 MERGED from [com.android.support:support-vector-drawable:25.2.0] C:\Users\Yangyl\.android\build-cache\fd8611db6f63c89a306525bcad748070ecaf585e\output\AndroidManifest.xml:23:5-20
 MERGED from [com.android.support:support-compat:25.2.0] C:\Users\Yangyl\.android\build-cache\876748970359b8b16d6dfb3e1c0dc5f0948cdfea\output\AndroidManifest.xml:25:5-20
+MERGED from [com.squareup.leakcanary:leakcanary-android:1.5] C:\Users\Yangyl\.android\build-cache\e7b8d9d5214cd180ff78d11f4a9370fe0a6e173f\output\AndroidManifest.xml:28:5-57:19
 	android:label
 		ADDED from D:\Android\WorkSpaseForAS\NdkGif\app\src\main\AndroidManifest.xml:8:9-41
 	android:supportsRtl
@@ -64,7 +65,7 @@ INJECTED from D:\Android\WorkSpaseForAS\NdkGif\app\src\main\AndroidManifest.xml 
 MERGED from [com.android.support:design:25.2.0] C:\Users\Yangyl\.android\build-cache\d2742461611c13092382f49c2b3c6c233208bb2b\output\AndroidManifest.xml:21:5-23:62
 MERGED from [com.android.support:recyclerview-v7:25.2.0] C:\Users\Yangyl\.android\build-cache\cec5b644f44ef3dfb62bb17901dd9f7ca56bff24\output\AndroidManifest.xml:20:5-43
 MERGED from [com.android.support:transition:25.2.0] C:\Users\Yangyl\.android\build-cache\d91d60ecff8dbbf4ea5ae042c1b9526a1e2a3a7b\output\AndroidManifest.xml:20:5-44
-MERGED from [NdkGif:gifencodedecode:unspecified] D:\Android\WorkSpaseForAS\NdkGif\gifencodedecode\build\intermediates\bundles\default\AndroidManifest.xml:7:5-9:41
+MERGED from [NdkGif:SimpleGif:unspecified] D:\Android\WorkSpaseForAS\NdkGif\SimpleGif\build\intermediates\bundles\default\AndroidManifest.xml:7:5-9:41
 MERGED from [com.android.support:appcompat-v7:25.2.0] C:\Users\Yangyl\.android\build-cache\10b892624f81421f2d3afc9e8b699f8d9ff2b126\output\AndroidManifest.xml:21:5-23:78
 MERGED from [com.android.support:support-v4:25.2.0] C:\Users\Yangyl\.android\build-cache\b6abf98d1e73986e61f5d135e73ac1ec696347b9\output\AndroidManifest.xml:21:5-23:54
 MERGED from [com.android.support:support-fragment:25.2.0] C:\Users\Yangyl\.android\build-cache\1d44e39ded0c8aa8b4783f2af2f0b50b8ad79097\output\AndroidManifest.xml:21:5-23:60
@@ -74,6 +75,7 @@ MERGED from [com.android.support:support-core-utils:25.2.0] C:\Users\Yangyl\.and
 MERGED from [com.android.support:animated-vector-drawable:25.2.0] C:\Users\Yangyl\.android\build-cache\acc02690453ea58797087c1766eb14dab2407590\output\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:support-vector-drawable:25.2.0] C:\Users\Yangyl\.android\build-cache\fd8611db6f63c89a306525bcad748070ecaf585e\output\AndroidManifest.xml:21:5-43
 MERGED from [com.android.support:support-compat:25.2.0] C:\Users\Yangyl\.android\build-cache\876748970359b8b16d6dfb3e1c0dc5f0948cdfea\output\AndroidManifest.xml:21:5-23:58
+MERGED from [com.squareup.leakcanary:leakcanary-android:1.5] C:\Users\Yangyl\.android\build-cache\e7b8d9d5214cd180ff78d11f4a9370fe0a6e173f\output\AndroidManifest.xml:20:5-22:41
 	tools:overrideLibrary
 		ADDED from [com.android.support:design:25.2.0] C:\Users\Yangyl\.android\build-cache\d2742461611c13092382f49c2b3c6c233208bb2b\output\AndroidManifest.xml:23:9-59
 	android:targetSdkVersion
@@ -82,3 +84,53 @@ MERGED from [com.android.support:support-compat:25.2.0] C:\Users\Yangyl\.android
 	android:minSdkVersion
 		INJECTED from D:\Android\WorkSpaseForAS\NdkGif\app\src\main\AndroidManifest.xml
 		INJECTED from D:\Android\WorkSpaseForAS\NdkGif\app\src\main\AndroidManifest.xml
+uses-permission#android.permission.READ_EXTERNAL_STORAGE
+ADDED from [com.squareup.leakcanary:leakcanary-android:1.5] C:\Users\Yangyl\.android\build-cache\e7b8d9d5214cd180ff78d11f4a9370fe0a6e173f\output\AndroidManifest.xml:25:5-80
+	android:name
+		ADDED from [com.squareup.leakcanary:leakcanary-android:1.5] C:\Users\Yangyl\.android\build-cache\e7b8d9d5214cd180ff78d11f4a9370fe0a6e173f\output\AndroidManifest.xml:25:22-77
+uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
+ADDED from [com.squareup.leakcanary:leakcanary-android:1.5] C:\Users\Yangyl\.android\build-cache\e7b8d9d5214cd180ff78d11f4a9370fe0a6e173f\output\AndroidManifest.xml:26:5-81
+	android:name
+		ADDED from [com.squareup.leakcanary:leakcanary-android:1.5] C:\Users\Yangyl\.android\build-cache\e7b8d9d5214cd180ff78d11f4a9370fe0a6e173f\output\AndroidManifest.xml:26:22-78
+service#com.squareup.leakcanary.internal.HeapAnalyzerService
+ADDED from [com.squareup.leakcanary:leakcanary-android:1.5] C:\Users\Yangyl\.android\build-cache\e7b8d9d5214cd180ff78d11f4a9370fe0a6e173f\output\AndroidManifest.xml:29:9-32:45
+	android:enabled
+		ADDED from [com.squareup.leakcanary:leakcanary-android:1.5] C:\Users\Yangyl\.android\build-cache\e7b8d9d5214cd180ff78d11f4a9370fe0a6e173f\output\AndroidManifest.xml:31:13-36
+	android:process
+		ADDED from [com.squareup.leakcanary:leakcanary-android:1.5] C:\Users\Yangyl\.android\build-cache\e7b8d9d5214cd180ff78d11f4a9370fe0a6e173f\output\AndroidManifest.xml:32:13-42
+	android:name
+		ADDED from [com.squareup.leakcanary:leakcanary-android:1.5] C:\Users\Yangyl\.android\build-cache\e7b8d9d5214cd180ff78d11f4a9370fe0a6e173f\output\AndroidManifest.xml:30:13-80
+service#com.squareup.leakcanary.DisplayLeakService
+ADDED from [com.squareup.leakcanary:leakcanary-android:1.5] C:\Users\Yangyl\.android\build-cache\e7b8d9d5214cd180ff78d11f4a9370fe0a6e173f\output\AndroidManifest.xml:33:9-35:39
+	android:enabled
+		ADDED from [com.squareup.leakcanary:leakcanary-android:1.5] C:\Users\Yangyl\.android\build-cache\e7b8d9d5214cd180ff78d11f4a9370fe0a6e173f\output\AndroidManifest.xml:35:13-36
+	android:name
+		ADDED from [com.squareup.leakcanary:leakcanary-android:1.5] C:\Users\Yangyl\.android\build-cache\e7b8d9d5214cd180ff78d11f4a9370fe0a6e173f\output\AndroidManifest.xml:34:13-70
+activity#com.squareup.leakcanary.internal.DisplayLeakActivity
+ADDED from [com.squareup.leakcanary:leakcanary-android:1.5] C:\Users\Yangyl\.android\build-cache\e7b8d9d5214cd180ff78d11f4a9370fe0a6e173f\output\AndroidManifest.xml:37:9-49:20
+	android:enabled
+		ADDED from [com.squareup.leakcanary:leakcanary-android:1.5] C:\Users\Yangyl\.android\build-cache\e7b8d9d5214cd180ff78d11f4a9370fe0a6e173f\output\AndroidManifest.xml:39:13-36
+	android:label
+		ADDED from [com.squareup.leakcanary:leakcanary-android:1.5] C:\Users\Yangyl\.android\build-cache\e7b8d9d5214cd180ff78d11f4a9370fe0a6e173f\output\AndroidManifest.xml:41:13-71
+	android:icon
+		ADDED from [com.squareup.leakcanary:leakcanary-android:1.5] C:\Users\Yangyl\.android\build-cache\e7b8d9d5214cd180ff78d11f4a9370fe0a6e173f\output\AndroidManifest.xml:40:13-54
+	android:theme
+		ADDED from [com.squareup.leakcanary:leakcanary-android:1.5] C:\Users\Yangyl\.android\build-cache\e7b8d9d5214cd180ff78d11f4a9370fe0a6e173f\output\AndroidManifest.xml:43:13-63
+	android:taskAffinity
+		ADDED from [com.squareup.leakcanary:leakcanary-android:1.5] C:\Users\Yangyl\.android\build-cache\e7b8d9d5214cd180ff78d11f4a9370fe0a6e173f\output\AndroidManifest.xml:42:13-59
+	android:name
+		ADDED from [com.squareup.leakcanary:leakcanary-android:1.5] C:\Users\Yangyl\.android\build-cache\e7b8d9d5214cd180ff78d11f4a9370fe0a6e173f\output\AndroidManifest.xml:38:13-80
+activity#com.squareup.leakcanary.internal.RequestStoragePermissionActivity
+ADDED from [com.squareup.leakcanary:leakcanary-android:1.5] C:\Users\Yangyl\.android\build-cache\e7b8d9d5214cd180ff78d11f4a9370fe0a6e173f\output\AndroidManifest.xml:50:9-56:68
+	android:enabled
+		ADDED from [com.squareup.leakcanary:leakcanary-android:1.5] C:\Users\Yangyl\.android\build-cache\e7b8d9d5214cd180ff78d11f4a9370fe0a6e173f\output\AndroidManifest.xml:52:13-36
+	android:label
+		ADDED from [com.squareup.leakcanary:leakcanary-android:1.5] C:\Users\Yangyl\.android\build-cache\e7b8d9d5214cd180ff78d11f4a9370fe0a6e173f\output\AndroidManifest.xml:54:13-82
+	android:icon
+		ADDED from [com.squareup.leakcanary:leakcanary-android:1.5] C:\Users\Yangyl\.android\build-cache\e7b8d9d5214cd180ff78d11f4a9370fe0a6e173f\output\AndroidManifest.xml:53:13-54
+	android:theme
+		ADDED from [com.squareup.leakcanary:leakcanary-android:1.5] C:\Users\Yangyl\.android\build-cache\e7b8d9d5214cd180ff78d11f4a9370fe0a6e173f\output\AndroidManifest.xml:56:13-65
+	android:taskAffinity
+		ADDED from [com.squareup.leakcanary:leakcanary-android:1.5] C:\Users\Yangyl\.android\build-cache\e7b8d9d5214cd180ff78d11f4a9370fe0a6e173f\output\AndroidManifest.xml:55:13-59
+	android:name
+		ADDED from [com.squareup.leakcanary:leakcanary-android:1.5] C:\Users\Yangyl\.android\build-cache\e7b8d9d5214cd180ff78d11f4a9370fe0a6e173f\output\AndroidManifest.xml:51:13-93

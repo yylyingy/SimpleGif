@@ -21,21 +21,27 @@ import android.widget.Toast;
 
 //import com.bumptech.glide.Glide;
 
+
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.gifdecoder.GifDecoder;
+import com.squareup.leakcanary.LeakCanary;
+import com.squareup.leakcanary.RefWatcher;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 
-import io.github.yylyingy.gifencodedecode.GifDecoder;
+import io.github.yangyl.ndkgif.R;
+import io.github.yylyingy.gifencodedecode.SimpleGif;
+
 
 public class MainActivity extends AppCompatActivity {
-
+    private RefWatcher mWatcherl;
     private boolean useDither = true;
     private static final int DISPLAY_GIF = 0x123;
-    private GifDecoder gifDecoder = new GifDecoder();
     ImageView imageView;
-    Object oj;
     private boolean isThreadNeedRunnine = true;
     Bitmap mBitmap = null;
     Drawable mDrawable = new BitmapDrawable(mBitmap);
@@ -53,11 +59,11 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        mWatcherl = LeakCanary.install(getApplication());
         setContentView(R.layout.activity_main);
-
         imageView = (ImageView) findViewById(R.id.image_view);
 //        Glide.with(this).load(setupSampleFile()).into(imageView);
+        SimpleGif.with(this).load(setupSampleFile()).into(imageView);
         imageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -65,64 +71,65 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        new Thread(new Runnable() {
-
-            @Override
-            public void run() {
-                String destFile = setupSampleFile();
-
-                final boolean isSucceeded = gifDecoder.load(destFile);
-//                runOnUiThread(new Runnable() {
-//                    @Override
-//                    public void run() {
-                long displayTime = 0;
-                long startDisplayTime = 0;
-                long lostTime = 0;
-                Bitmap bitmap = null;
-                while (isThreadNeedRunnine){
-                    if (isSucceeded) {
-                        for (int i = 1;i <= gifDecoder.frameNum();i ++){
-                            long wast = System.currentTimeMillis();
-
-                            bitmap = gifDecoder.frame(i);
-                            if (bitmap == null)break;
-//                            Matrix matrix = new Matrix();
-//                            matrix.postScale(0.5f,0.5f);
-//                            bitmap = Bitmap.createBitmap(bitmap,0,0,bitmap.getWidth(),bitmap.getHeight(),
-//                                    matrix,true);
-                            Message message = Message.obtain();
-                            message.what = DISPLAY_GIF;
-                            message.obj = bitmap;
-                            mHandler.sendMessage(message);
-                            startDisplayTime = System.currentTimeMillis();
-                            displayTime = gifDecoder.delay(i);
-                            while ((lostTime) < displayTime ){
-                                lostTime = System.currentTimeMillis() - startDisplayTime;
-                            }
-                            lostTime = 0;
-                            wast = System.currentTimeMillis() - wast;
-                                try {
-                                    Thread.sleep(gifDecoder.delay(i));
-                                } catch (InterruptedException e) {
-                                    e.printStackTrace();
-                                }
-                        }
-
-                    } else {
-                        Toast.makeText(MainActivity.this, "Failed", Toast.LENGTH_SHORT).show();
-                    }
-                }
+//        new Thread(new Runnable() {
+//
+//            @Override
+//            public void run() {
+//                String destFile = setupSampleFile();
+//
+//                final boolean isSucceeded = gifDecoder.load(destFile);
+////                runOnUiThread(new Runnable() {
+////                    @Override
+////                    public void run() {
+//                long displayTime = 0;
+//                long startDisplayTime = 0;
+//                long lostTime = 0;
+//                Bitmap bitmap = null;
+//                while (isThreadNeedRunnine){
+//                    if (isSucceeded) {
+//                        for (int i = 1;i <= gifDecoder.frameNum();i ++){
+//                            long wast = System.currentTimeMillis();
+//
+//                            bitmap = gifDecoder.frame(i);
+//                            if (bitmap == null)break;
+////                            Matrix matrix = new Matrix();
+////                            matrix.postScale(0.5f,0.5f);
+////                            bitmap = Bitmap.createBitmap(bitmap,0,0,bitmap.getWidth(),bitmap.getHeight(),
+////                                    matrix,true);
+//                            Message message = Message.obtain();
+//                            message.what = DISPLAY_GIF;
+//                            message.obj = bitmap;
+//                            mHandler.sendMessage(message);
+//                            startDisplayTime = System.currentTimeMillis();
+//                            displayTime = gifDecoder.delay(i);
+//                            while ((lostTime) < displayTime ){
+//                                lostTime = System.currentTimeMillis() - startDisplayTime;
+//                            }
+//                            lostTime = 0;
+//                            wast = System.currentTimeMillis() - wast;
+//                                try {
+//                                    Thread.sleep(gifDecoder.delay(i));
+//                                } catch (InterruptedException e) {
+//                                    e.printStackTrace();
+//                                }
+//                        }
+//
+//                    } else {
+//                        Toast.makeText(MainActivity.this, "Failed", Toast.LENGTH_SHORT).show();
 //                    }
-//                });
-            }
-        }).start();
+//                }
+////                    }
+////                });
+//            }
+//        }).start();
     }
 
     @Override
     protected void onDestroy() {
+        Log.d(getLocalClassName(),"Destroy!");
         isThreadNeedRunnine = false;
-        gifDecoder.destroy();
         super.onDestroy();
+        mWatcherl.watch(this);
     }
 
     private String setupSampleFile() {

@@ -1,1 +1,1 @@
-include ':app', ':gifencodedecode'
+include ':app', ':SimpleGif'

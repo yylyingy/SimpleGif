@@ -7,6 +7,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 
+import io.github.yangyl.ndkgif.R;
+
 public class Main2Activity extends AppCompatActivity {
 
     @Override
