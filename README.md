@@ -26,9 +26,9 @@ Simple use cases will look something like this:
 Decode
 ========
 
-![gif](https://github.com/yylyingy/ndkgif/blob/master/app/src/main/assets/display.gif)
+![gif](https://github.com/yylyingy/ndkgif/blob/master/sample/src/main/assets/display.gif)
 
-![gif](https://github.com/yylyingy/ndkgif/blob/master/app/src/main/assets/sample1.gif)
+![gif](https://github.com/yylyingy/ndkgif/blob/master/sample/src/main/assets/sample1.gif)
 
 Feature
 ========
