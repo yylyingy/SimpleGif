@@ -1,4 +1,4 @@
-package io.github.yangyl.ndkgif;
+package io.github.yylyingy.ndkgif;
 
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -7,7 +7,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 
-import io.github.yangyl.ndkgif.R;
 
 public class Main2Activity extends AppCompatActivity {
 

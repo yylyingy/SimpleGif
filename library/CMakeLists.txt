@@ -9,9 +9,9 @@ cmake_minimum_required(VERSION 3.4.1)
 # You can define multiple libraries, and CMake builds it for you.
 # Gradle automatically packages shared libraries with your APK.
 
-include_directories(D:/Android/WorkSpaseForAS/TestLibjpeg/app/libs)
+#include_directories(D:/Android/WorkSpaseForAS/TestLibjpeg/app/libs)
 add_library( # Sets the name of the library.
-             androidndkgif
+             simple_gif
 
              # Sets the library as a shared library.
              SHARED
@@ -25,8 +25,8 @@ add_library( # Sets the name of the library.
              src/main/cpp/GifDecoder.cpp
              src/main/cpp/GifEncoder.cpp
              src/main/cpp/GifFrame.cpp
-             src/main/cpp/io_github_yylyingy_gifencodedecode_GifDecoder.cpp
-             src/main/cpp/io_github_yylyingy_gifencodedecode_GifEncoder.cpp
+             src/main/cpp/io_github_yylyingy_simplegif_GifDecodeInfoHandle.cpp
+             src/main/cpp/io_github_yylyingy_simplegif_GifEncodeInfoHandle.cpp
              src/main/cpp/GCTGifEncoder.cpp
              src/main/cpp/LCTGifEncoder.cpp
              src/main/cpp/SimpleGCTEncoder.cpp
@@ -57,7 +57,7 @@ find_library( # Sets the name of the path variable.
 # build script, prebuilt third-party libraries, or system libraries.
 
 target_link_libraries( # Specifies the target library.
-                       androidndkgif
+                       simple_gif
 
                        # Links the target library to the log library
                        # included in the NDK.

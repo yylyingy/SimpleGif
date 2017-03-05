@@ -1,10 +1,10 @@
-package io.github.yylyingy.gifencodedecode;
+package io.github.yylyingy.simplegif;
 
 import android.graphics.Bitmap;
 
 import java.io.FileNotFoundException;
 
-public class GifEncoder {
+public class GifEncodeInfoHandle {
 
     static {
         System.loadLibrary("androidndkgif");

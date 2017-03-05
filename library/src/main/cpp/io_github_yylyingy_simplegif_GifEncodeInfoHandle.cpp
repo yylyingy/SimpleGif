@@ -1,4 +1,4 @@
-#include "io_github_yylyingy_gifencodedecode_GifEncoder.h"
+#include "io_github_yylyingy_simplegif_GifEncodeInfoHandle.h"
 #include <stdint.h>
 #include <stdio.h>
 #include <stdint.h>
@@ -12,7 +12,7 @@
 extern "C" {
 #endif
 
-JNIEXPORT jlong JNICALL Java_io_github_yylyingy_gifencodedecode_GifEncoder_nativeInit
+JNIEXPORT jlong JNICALL Java_io_github_yylyingy_simplegif_GifEncodeInfoHandle_nativeInit
   (JNIEnv *env, jobject, jint width, jint height, jstring path, jint encodingType)
 {
     GifEncoder* gifEncoder = new GifEncoder(static_cast<EncodingType>(encodingType));
@@ -27,7 +27,7 @@ JNIEXPORT jlong JNICALL Java_io_github_yylyingy_gifencodedecode_GifEncoder_nativ
     }
 }
 
-JNIEXPORT void JNICALL Java_io_github_yylyingy_gifencodedecode_GifEncoder_nativeClose
+JNIEXPORT void JNICALL Java_io_github_yylyingy_simplegif_GifEncodeInfoHandle_nativeClose
   (JNIEnv *, jobject, jlong handle)
 {
     GifEncoder* gifEncoder = (GifEncoder*)handle;
@@ -35,14 +35,14 @@ JNIEXPORT void JNICALL Java_io_github_yylyingy_gifencodedecode_GifEncoder_native
     delete gifEncoder;
 }
 
-JNIEXPORT void JNICALL Java_io_github_yylyingy_gifencodedecode_GifEncoder_nativeSetDither
+JNIEXPORT void JNICALL Java_io_github_yylyingy_simplegif_GifEncodeInfoHandle_nativeSetDither
   (JNIEnv *, jobject, jlong handle, jboolean useDither)
 {
     GifEncoder* gifEncoder = (GifEncoder*)handle;
     gifEncoder->setDither(useDither);
 }
 
-JNIEXPORT jboolean JNICALL Java_io_github_yylyingy_gifencodedecode_GifEncoder_nativeEncodeFrame
+JNIEXPORT jboolean JNICALL Java_io_github_yylyingy_simplegif_GifEncodeInfoHandle_nativeEncodeFrame
   (JNIEnv * env, jobject, jlong handle, jobject jBmpObj, jint delayMs)
 {
     GifEncoder* gifEncoder = (GifEncoder*)handle;

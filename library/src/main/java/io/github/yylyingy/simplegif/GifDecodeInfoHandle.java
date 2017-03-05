@@ -1,28 +1,15 @@
-package io.github.yylyingy.gifencodedecode;
+package io.github.yylyingy.simplegif;
 
 import android.graphics.Bitmap;
 
 public class GifDecodeInfoHandle {
 
     static {
-        System.loadLibrary("androidndkgif");
+        System.loadLibrary("simple_gif");
     }
 
     private int currentFrameIndex;
     private int nextFrameIndex;
-    private native long nativeInit();
-    private native void nativeClose(long handle);
-
-    private native boolean nativeLoad(long handle, String fileName);
-
-    private native int nativeGetFrameCount(long handle);
-
-    private native Bitmap nativeGetFrame(long handle, int n);
-    private native Bitmap renderFrame(long handle, int n,Bitmap bitmap);
-    private native int nativeGetDelay(long handle, int n);
-
-    private native int nativeGetWidth(long handle);
-    private native int nativeGetHeight(long handle);
 
     private int width = 0;
     private int height = 0;
@@ -126,4 +113,19 @@ public class GifDecodeInfoHandle {
     public int delay(int idx) {
         return delays[idx];
     }
+
+
+    private native long nativeInit();
+    private native void nativeClose(long handle);
+
+    private native boolean nativeLoad(long handle, String fileName);
+
+    private native int nativeGetFrameCount(long handle);
+
+    private native Bitmap nativeGetFrame(long handle, int n);
+    private native Bitmap renderFrame(long handle, int n,Bitmap bitmap);
+    private native int nativeGetDelay(long handle, int n);
+
+    private native int nativeGetWidth(long handle);
+    private native int nativeGetHeight(long handle);
 }

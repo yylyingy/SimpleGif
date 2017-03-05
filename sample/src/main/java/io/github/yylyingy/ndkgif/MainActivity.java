@@ -33,8 +33,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 
-import io.github.yangyl.ndkgif.R;
-import io.github.yylyingy.gifencodedecode.SimpleGif;
+import io.github.yylyingy.simplegif.SimpleGif;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -67,7 +66,7 @@ public class MainActivity extends AppCompatActivity {
         imageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, io.github.yangyl.ndkgif.Main2Activity.class));
+                startActivity(new Intent(MainActivity.this, Main2Activity.class));
             }
         });
 

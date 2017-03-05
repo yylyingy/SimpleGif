@@ -1,4 +1,4 @@
-#include "io_github_yylyingy_gifencodedecode_GifDecoder.h"
+#include "io_github_yylyingy_simplegif_GifDecodeInfoHandle.h"
 #include "GifDecoder.h"
 #include <string.h>
 #include <wchar.h>
@@ -7,20 +7,20 @@
 #ifdef __cplusplus
 extern "C" {
 #endif
-//io.github.yylyingy.gifencodedecode
-JNIEXPORT jlong JNICALL Java_io_github_yylyingy_gifencodedecode_GifDecodeInfoHandle_nativeInit
+//io.github.yylyingy.simplegif
+JNIEXPORT jlong JNICALL Java_io_github_yylyingy_simplegif_GifDecodeInfoHandle_nativeInit
   (JNIEnv *env, jobject)
 {
     return (jlong)new GifDecoder();
 }
 
-JNIEXPORT void JNICALL Java_io_github_yylyingy_gifencodedecode_GifDecodeInfoHandle_nativeClose
+JNIEXPORT void JNICALL Java_io_github_yylyingy_simplegif_GifDecodeInfoHandle_nativeClose
   (JNIEnv *, jobject, jlong handle)
 {
     delete (GifDecoder*)handle;
 }
 
-JNIEXPORT jboolean JNICALL Java_io_github_yylyingy_gifencodedecode_GifDecodeInfoHandle_nativeLoad
+JNIEXPORT jboolean JNICALL Java_io_github_yylyingy_simplegif_GifDecodeInfoHandle_nativeLoad
   (JNIEnv * env, jobject, jlong handle, jstring fileName)
 {
     const char* fileNameChars = env->GetStringUTFChars(fileName, 0);
@@ -29,13 +29,13 @@ JNIEXPORT jboolean JNICALL Java_io_github_yylyingy_gifencodedecode_GifDecodeInfo
     return result;
 }
 
-JNIEXPORT jint JNICALL Java_io_github_yylyingy_gifencodedecode_GifDecodeInfoHandle_nativeGetFrameCount
+JNIEXPORT jint JNICALL Java_io_github_yylyingy_simplegif_GifDecodeInfoHandle_nativeGetFrameCount
   (JNIEnv *, jobject, jlong handle)
 {
     return ((GifDecoder*)handle)->getFrameCount();
 }
 
-JNIEXPORT jobject JNICALL Java_io_github_yylyingy_gifencodedecode_GifDecodeInfoHandle_nativeGetFrame
+JNIEXPORT jobject JNICALL Java_io_github_yylyingy_simplegif_GifDecodeInfoHandle_nativeGetFrame
   (JNIEnv *env, jobject, jlong handle, jint idx)
 {
     GifDecoder* decoder = (GifDecoder*)handle;
@@ -65,7 +65,7 @@ JNIEXPORT jobject JNICALL Java_io_github_yylyingy_gifencodedecode_GifDecodeInfoH
     return jBmpObj;
 }
 
-JNIEXPORT jobject JNICALL Java_io_github_yylyingy_gifencodedecode_GifDecodeInfoHandle_renderFrame
+JNIEXPORT jobject JNICALL Java_io_github_yylyingy_simplegif_GifDecodeInfoHandle_renderFrame
         (JNIEnv *env, jobject, jlong handle, jint idx,jobject jBmpObj){
     GifDecoder* decoder = (GifDecoder*)handle;
     int imgWidth = decoder->getWidth();
@@ -82,19 +82,19 @@ JNIEXPORT jobject JNICALL Java_io_github_yylyingy_gifencodedecode_GifDecodeInfoH
     return jBmpObj;
 }
 
-JNIEXPORT jint JNICALL Java_io_github_yylyingy_gifencodedecode_GifDecodeInfoHandle_nativeGetDelay
+JNIEXPORT jint JNICALL Java_io_github_yylyingy_simplegif_GifDecodeInfoHandle_nativeGetDelay
         (JNIEnv *, jobject, jlong handle, jint idx)
 {
     return ((GifDecoder*)handle)->getDelay(idx);
 }
 
-JNIEXPORT jint JNICALL Java_io_github_yylyingy_gifencodedecode_GifDecodeInfoHandle_nativeGetWidth
+JNIEXPORT jint JNICALL Java_io_github_yylyingy_simplegif_GifDecodeInfoHandle_nativeGetWidth
   (JNIEnv *, jobject, jlong handle)
 {
     return ((GifDecoder*)handle)->getWidth();
 }
 
-JNIEXPORT jint JNICALL Java_io_github_yylyingy_gifencodedecode_GifDecodeInfoHandle_nativeGetHeight
+JNIEXPORT jint JNICALL Java_io_github_yylyingy_simplegif_GifDecodeInfoHandle_nativeGetHeight
   (JNIEnv *, jobject, jlong handle)
 {
     return ((GifDecoder*)handle)->getHeight();

@@ -1,4 +1,4 @@
-package io.github.yylyingy.gifencodedecode;
+package io.github.yylyingy.simplegif;
 
 import android.app.Activity;
 import android.content.Context;
