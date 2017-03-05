@@ -1,4 +1,4 @@
-package io.github.yangyl.ndkgif;
+package io.github.yylyingy.ndkgif;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

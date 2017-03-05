@@ -4,6 +4,10 @@ An Android NDK GIF Library
 GIF library built with cmake for usage with android gradle build system.
 This c source code refer to android-ndk-gif.
 
+========
+Note
+The next version will support bind the Context's lifecycle.
+
 Blog
 [http://blog.csdn.net/qq372848728/article/details/59104104](http://blog.csdn.net/qq372848728/article/details/59104104)
 

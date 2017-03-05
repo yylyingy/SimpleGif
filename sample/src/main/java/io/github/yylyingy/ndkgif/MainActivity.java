@@ -1,4 +1,4 @@
-package io.github.yangyl.ndkgif;
+package io.github.yylyingy.ndkgif;
 
 import android.content.Intent;
 import android.content.res.AssetManager;
@@ -67,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
         imageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this,Main2Activity.class));
+                startActivity(new Intent(MainActivity.this, io.github.yangyl.ndkgif.Main2Activity.class));
             }
         });
 

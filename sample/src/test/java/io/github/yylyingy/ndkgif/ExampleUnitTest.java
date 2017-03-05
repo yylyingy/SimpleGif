@@ -1,4 +1,4 @@
-package io.github.yangyl.ndkgif;
+package io.github.yylyingy.ndkgif;
 
 import org.junit.Test;
 
