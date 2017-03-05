@@ -12,3 +12,4 @@
 /sample/build
 /SimpleGif/build
 /sample/src/main/java/com/bumptech
+*.apk
