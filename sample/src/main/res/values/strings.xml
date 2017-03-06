@@ -1,4 +1,4 @@
 <resources>
-    <string name="app_name">NdkGif</string>
+    <string name="app_name">SimpleGif</string>
     <string name="title_activity_main2">Main2Activity</string>
 </resources>

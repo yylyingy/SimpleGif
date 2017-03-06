@@ -9,7 +9,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="io.github.yangyl.ndkgif.MainActivity">
+    tools:context="io.github.yylyingy.ndkgif.MainActivity">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -19,52 +19,61 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
             <ImageView
-                android:id="@+id/image_view"
+                android:id="@+id/image_view1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="50dp"
                 android:scaleType="fitXY"/>
             <ImageView
+                android:id="@+id/image_view2"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_marginTop="50dp"
                 android:scaleType="fitXY"/>
             <ImageView
+                android:id="@+id/image_view3"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_marginTop="50dp"
                 android:scaleType="fitXY"/>
             <ImageView
+                android:id="@+id/image_view4"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_marginTop="50dp"
                 android:scaleType="fitXY"/>
             <ImageView
+                android:id="@+id/image_view5"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_marginTop="50dp"
                 android:scaleType="fitXY"/>
             <ImageView
+                android:id="@+id/image_view6"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_marginTop="50dp"
                 android:scaleType="fitXY"/>
             <ImageView
+                android:id="@+id/image_view7"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_marginTop="50dp"
                 android:scaleType="fitXY"/>
             <ImageView
+                android:id="@+id/image_view8"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_marginTop="50dp"
                 android:scaleType="fitXY"/>
             <ImageView
+                android:id="@+id/image_view9"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_marginTop="50dp"
                 android:scaleType="fitXY"/>
             <ImageView
+                android:id="@+id/image_view10"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_marginTop="50dp"

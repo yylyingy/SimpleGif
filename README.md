@@ -8,6 +8,15 @@ This c source code refer to android-ndk-gif.
 Note
 The next version will support bind the Context's lifecycle.
 
+Runtime CPU and memory Usage compared with Glide,Both of them are displaying
+nine gifs on the screen:
+SimpleGif:
+![SimpleGif](https://github.com/yylyingy/SimpleGif/blob/master/PICTURES/Simple.png)
+
+Glide:
+![Glide](https://github.com/yylyingy/SimpleGif/blob/master/PICTURES/Glide.png)
+
+
 Blog
 [http://blog.csdn.net/qq372848728/article/details/59104104](http://blog.csdn.net/qq372848728/article/details/59104104)
 
@@ -27,12 +36,14 @@ Simple use cases will look something like this:
 ```
 
 
+
+
 Decode
 ========
 
-![gif](https://github.com/yylyingy/ndkgif/blob/master/sample/src/main/assets/display.gif)
+![gif](https://github.com/yylyingy/SimpleGif/blob/master/sample/src/main/assets/display.gif)
 
-![gif](https://github.com/yylyingy/ndkgif/blob/master/sample/src/main/assets/sample1.gif)
+![gif](https://github.com/yylyingy/SimpleGif/blob/master/sample/src/main/assets/sample1.gif)
 
 Feature
 ========

@@ -1,6 +1,8 @@
 package io.github.yylyingy.simplegif;
 
 import android.content.Context;
+import android.support.annotation.NonNull;
+import android.support.v4.app.Fragment;
 
 /**
  * Created by Yangyl on 2017/3/4.
@@ -13,8 +15,12 @@ public class SimpleGif {
         mContext  = context;
         mRendTask = new RendTask(mContext);
     }
-    public static SimpleGif with(Context context){
+    public static SimpleGif with(@NonNull Context context){
         return new SimpleGif(context);
+    }
+
+    public static SimpleGif with(Fragment fragment){
+        return null;
     }
 
     public RendTask load(String file){

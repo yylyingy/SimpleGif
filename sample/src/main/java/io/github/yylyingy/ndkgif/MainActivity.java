@@ -22,8 +22,6 @@ import android.widget.Toast;
 //import com.bumptech.glide.Glide;
 
 
-import com.bumptech.glide.Glide;
-import com.bumptech.glide.gifdecoder.GifDecoder;
 import com.squareup.leakcanary.LeakCanary;
 import com.squareup.leakcanary.RefWatcher;
 
@@ -42,8 +40,6 @@ public class MainActivity extends AppCompatActivity {
     private static final int DISPLAY_GIF = 0x123;
     ImageView imageView;
     private boolean isThreadNeedRunnine = true;
-    Bitmap mBitmap = null;
-    Drawable mDrawable = new BitmapDrawable(mBitmap);
     private Handler mHandler = new Handler(){
         @Override
         public void handleMessage(Message msg) {
@@ -60,9 +56,17 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         mWatcherl = LeakCanary.install(getApplication());
         setContentView(R.layout.activity_main);
-        imageView = (ImageView) findViewById(R.id.image_view);
-//        Glide.with(this).load(setupSampleFile()).into(imageView);
+        imageView = (ImageView) findViewById(R.id.image_view1);
         SimpleGif.with(this).load(setupSampleFile()).into(imageView);
+//        SimpleGif.with(this).load(setupSampleFile()).into((ImageView) findViewById(R.id.image_view2));
+//        SimpleGif.with(this).load(setupSampleFile()).into((ImageView) findViewById(R.id.image_view3));
+//        SimpleGif.with(this).load(setupSampleFile()).into((ImageView) findViewById(R.id.image_view4));
+//        SimpleGif.with(this).load(setupSampleFile()).into((ImageView) findViewById(R.id.image_view5));
+//        SimpleGif.with(this).load(setupSampleFile()).into((ImageView) findViewById(R.id.image_view6));
+//        SimpleGif.with(this).load(setupSampleFile()).into((ImageView) findViewById(R.id.image_view7));
+//        SimpleGif.with(this).load(setupSampleFile()).into((ImageView) findViewById(R.id.image_view8));
+//        SimpleGif.with(this).load(setupSampleFile()).into((ImageView) findViewById(R.id.image_view9));
+
         imageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
