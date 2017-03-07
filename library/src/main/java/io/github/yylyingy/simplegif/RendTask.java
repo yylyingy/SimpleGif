@@ -1,5 +1,6 @@
 package io.github.yylyingy.simplegif;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
 import android.graphics.Bitmap;
@@ -96,7 +97,9 @@ public class RendTask implements Request{
     @Override
     public void clear() {
         handler.removeCallbacks(runnable);
-        Log.d("","rendtask destroy");
+        if (Log.isLoggable("", Log.WARN)){
+            Log.w("","rendtask destroy");
+        }
         mDecodeInfo.destroy();
     }
 
