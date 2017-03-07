@@ -14,7 +14,6 @@ public class GifDecodeInfoHandle {
     private int width = 0;
     private int height = 0;
 
-    private Bitmap[] bitmaps = new Bitmap[0];
     private Bitmap   frame;
     private int[] delays = new int[0];
     private int frameNum;
@@ -32,15 +31,12 @@ public class GifDecodeInfoHandle {
         height = nativeGetHeight(handle);
 
         frameNum = nativeGetFrameCount(handle);
-        bitmaps = new Bitmap[frameNum];
         delays = new int[frameNum];
         for (int i = 0; i < frameNum; ++i) {
-           // bitmaps[i] = nativeGetFrame(handle, i);
             delays[i] = nativeGetDelay(handle, i);
         }
         currentFrameIndex = 0;
         nextFrameIndex    = 0;
-        //nativeClose(handle);
         return true;
     }
 

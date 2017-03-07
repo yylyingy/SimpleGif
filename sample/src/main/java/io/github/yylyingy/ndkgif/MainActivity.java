@@ -1,5 +1,6 @@
 package io.github.yylyingy.ndkgif;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.content.res.AssetManager;
 import android.graphics.Bitmap;
@@ -35,9 +36,11 @@ import io.github.yylyingy.simplegif.SimpleGif;
 
 
 public class MainActivity extends AppCompatActivity {
-    private RefWatcher mWatcherl;
     private boolean useDither = true;
     private static final int DISPLAY_GIF = 0x123;
+    private StringBuilder file = new StringBuilder(Environment.getExternalStorageDirectory() + File.separator + "360"
+            + File.separator + "simplegif" + File.separator);
+    private String [] files = new String[9];
     ImageView imageView;
     private boolean isThreadNeedRunnine = true;
     private Handler mHandler = new Handler(){
@@ -54,18 +57,21 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        mWatcherl = LeakCanary.install(getApplication());
         setContentView(R.layout.activity_main);
         imageView = (ImageView) findViewById(R.id.image_view1);
+        for (int i = 2;i < 10;i ++){
+            files[i - 2] = file.toString() + "sample" + i + ".gif";
+            Log.d(getLocalClassName(),files[i - 2]);
+        }
         SimpleGif.with(this).load(setupSampleFile()).into(imageView);
-//        SimpleGif.with(this).load(setupSampleFile()).into((ImageView) findViewById(R.id.image_view2));
-//        SimpleGif.with(this).load(setupSampleFile()).into((ImageView) findViewById(R.id.image_view3));
-//        SimpleGif.with(this).load(setupSampleFile()).into((ImageView) findViewById(R.id.image_view4));
-//        SimpleGif.with(this).load(setupSampleFile()).into((ImageView) findViewById(R.id.image_view5));
-//        SimpleGif.with(this).load(setupSampleFile()).into((ImageView) findViewById(R.id.image_view6));
-//        SimpleGif.with(this).load(setupSampleFile()).into((ImageView) findViewById(R.id.image_view7));
-//        SimpleGif.with(this).load(setupSampleFile()).into((ImageView) findViewById(R.id.image_view8));
-//        SimpleGif.with(this).load(setupSampleFile()).into((ImageView) findViewById(R.id.image_view9));
+        SimpleGif.with(this).load(files[0]).into((ImageView) findViewById(R.id.image_view2));
+        SimpleGif.with(this).load(files[1]).into((ImageView) findViewById(R.id.image_view3));
+        SimpleGif.with(this).load(files[2]).into((ImageView) findViewById(R.id.image_view4));
+        SimpleGif.with(this).load(files[3]).into((ImageView) findViewById(R.id.image_view5));
+        SimpleGif.with(this).load(files[4]).into((ImageView) findViewById(R.id.image_view6));
+        SimpleGif.with(this).load(files[5]).into((ImageView) findViewById(R.id.image_view7));
+        SimpleGif.with(this).load(files[6]).into((ImageView) findViewById(R.id.image_view8));
+        SimpleGif.with(this).load(files[7]).into((ImageView) findViewById(R.id.image_view9));
 
         imageView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -82,7 +88,7 @@ public class MainActivity extends AppCompatActivity {
         Log.d(getLocalClassName(),"Destroy!");
         isThreadNeedRunnine = false;
         super.onDestroy();
-        mWatcherl.watch(this);
+        ((SampleApplication)getApplication()).mWatcher.watch(this);
     }
 
     private String setupSampleFile() {

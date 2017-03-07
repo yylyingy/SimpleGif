@@ -3,13 +3,15 @@ An Android NDK GIF Library
 ========
 GIF library built with cmake for usage with android gradle build system.
 This c source code refer to android-ndk-gif.
+The java api is similar to Glide,but the performance is better than Glide.
 
 ========
 Note
-The next version will support bind the Context's lifecycle.
+Now,the SimpleGif's lifecycle can bind with the Fragment and Activity's lifecycle.
 
-Runtime CPU and memory Usage compared with Glide,Both of them are displaying
-nine gifs on the screen:
+The next pictures is showing Runtime CPU and memory Usage comparerison between Glide and SimpleGif,Both of them are displaying
+nine gifs on the screen,
+
 SimpleGif:
 ![SimpleGif](https://github.com/yylyingy/SimpleGif/blob/master/PICTURES/Simple.png)
 
