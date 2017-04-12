@@ -12,7 +12,7 @@ import java.util.List;
 
 public class Util {
 
-    public void assertMainThread(){
+    public static void assertMainThread(){
         if (!isOnMainThread()){
             throw new IllegalArgumentException("You must call this method on the main thread!");
         }

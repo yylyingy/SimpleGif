@@ -96,6 +96,7 @@ public class RequestManager implements LifecycleListener{
     @Override
     public void onDestroy() {
         requestTracker.clearRequests();
+        requestTracker.destroyRequests();
     }
 
     public void onLowMemory(){

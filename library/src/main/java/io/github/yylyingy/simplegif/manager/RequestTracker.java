@@ -38,6 +38,7 @@ public class RequestTracker {
         }
     }
 
+
     public void removeRequest(Request request){
         requests.remove(request);
         pendingRequests.remove(request);
@@ -83,6 +84,12 @@ public class RequestTracker {
             request.clear();
         }
         pendingRequests.clear();
+    }
+
+    public void destroyRequests(){
+        for (Request request : Util.getSnapshot(requests)) {
+            request.recycle();
+        }
     }
 
     /**

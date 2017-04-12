@@ -9,10 +9,12 @@ import android.graphics.Movie;
 import android.os.Handler;
 import android.os.Looper;
 import android.util.Log;
+import android.view.View;
 import android.widget.ImageView;
 
 import io.github.yylyingy.simplegif.manager.RequestTracker;
 import io.github.yylyingy.simplegif.request.Request;
+import io.github.yylyingy.simplegif.util.Util;
 
 /**
  * Created by Yangyl on 2017/3/4.
@@ -46,15 +48,16 @@ public class RendTask implements Request{
         return this;
     }
 
-    public void into(ImageView imageView) {
+    public Request into(ImageView imageView) {
         this.imageView = imageView;
         if (mDecodeInfo == null) {
-            return;
+            throw new IllegalArgumentException("Gif files decode failed!");
         } else if (imageView == null) {
-            throw new IllegalArgumentException("ImageView can not be null");
+            throw new IllegalArgumentException("ImageView can not be null!");
         } else {
             requestTracker.runRequest(this);
         }
+        return this;
     }
 
     private void load(String file){
@@ -79,6 +82,7 @@ public class RendTask implements Request{
     public void begin() {
         isRunning = true;
         handler.post(runnable);
+        imageView.setVisibility(View.VISIBLE);
     }
 
     /**
@@ -96,11 +100,13 @@ public class RendTask implements Request{
      */
     @Override
     public void clear() {
+        Util.assertMainThread();
         handler.removeCallbacks(runnable);
+        imageView.setVisibility(View.INVISIBLE);
         if (Log.isLoggable("", Log.WARN)){
             Log.w("","rendtask destroy");
         }
-        mDecodeInfo.destroy();
+//        mDecodeInfo.destroy();
     }
 
     /**
@@ -157,6 +163,15 @@ public class RendTask implements Request{
      */
     @Override
     public void recycle() {
-
+        clear();
+        requestTracker.removeRequest(this);
+        mDecodeInfo.destroy();
+        mDecodeInfo     = null;
+        imageView       = null;
+        handler         = null;
+        isRunning       = false;
+        requestTracker  = null;
+        runnable        = null;
+        handler         = null;
     }
 }

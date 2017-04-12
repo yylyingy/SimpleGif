@@ -23,6 +23,7 @@ import android.widget.Toast;
 //import com.bumptech.glide.Glide;
 
 
+import com.bumptech.glide.Glide;
 import com.squareup.leakcanary.LeakCanary;
 import com.squareup.leakcanary.RefWatcher;
 
@@ -33,26 +34,14 @@ import java.io.IOException;
 import java.io.InputStream;
 
 import io.github.yylyingy.simplegif.SimpleGif;
+import io.github.yylyingy.simplegif.request.Request;
 
 
 public class MainActivity extends AppCompatActivity {
-    private boolean useDither = true;
-    private static final int DISPLAY_GIF = 0x123;
     private StringBuilder file = new StringBuilder(Environment.getExternalStorageDirectory() + File.separator + "360"
             + File.separator + "simplegif" + File.separator);
-    private String [] files = new String[9];
+    private String [] filesPath = new String[9];
     ImageView imageView;
-    private boolean isThreadNeedRunnine = true;
-    private Handler mHandler = new Handler(){
-        @Override
-        public void handleMessage(Message msg) {
-            switch (msg.what){
-                case DISPLAY_GIF:
-                    imageView.setImageBitmap((Bitmap) msg.obj);
-                    break;
-            }
-        }
-    };
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -60,19 +49,47 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         imageView = (ImageView) findViewById(R.id.image_view1);
         for (int i = 2;i < 10;i ++){
-            files[i - 2] = file.toString() + "sample" + i + ".gif";
-            Log.d(getLocalClassName(),files[i - 2]);
+            filesPath[i - 2] = file.toString() + "sample" + i + ".gif";
+            Log.d(getLocalClassName(),filesPath[i - 2]);
         }
         SimpleGif.with(this).load(setupSampleFile()).into(imageView);
-        SimpleGif.with(this).load(files[0]).into((ImageView) findViewById(R.id.image_view2));
-        SimpleGif.with(this).load(files[1]).into((ImageView) findViewById(R.id.image_view3));
-        SimpleGif.with(this).load(files[2]).into((ImageView) findViewById(R.id.image_view4));
-        SimpleGif.with(this).load(files[3]).into((ImageView) findViewById(R.id.image_view5));
-        SimpleGif.with(this).load(files[4]).into((ImageView) findViewById(R.id.image_view6));
-        SimpleGif.with(this).load(files[5]).into((ImageView) findViewById(R.id.image_view7));
-        SimpleGif.with(this).load(files[6]).into((ImageView) findViewById(R.id.image_view8));
-        SimpleGif.with(this).load(files[7]).into((ImageView) findViewById(R.id.image_view9));
+        final Request request = SimpleGif.with(this).load(setupLoveFile()).into((ImageView) findViewById(R.id.image_view2));
+//        Glide.with(this).load(filesPath[1]).into((ImageView) findViewById(R.id.image_view3));
+        final com.bumptech.glide.request.Request request1 =  Glide.with(this).load(filesPath[1]).into((ImageView) findViewById(R.id.image_view3)).getRequest();
 
+//        SimpleGif.with(this).load(filesPath[2]).into((ImageView) findViewById(R.id.image_view4));
+//        SimpleGif.with(this).load(filesPath[3]).into((ImageView) findViewById(R.id.image_view5));
+//        SimpleGif.with(this).load(filesPath[4]).into((ImageView) findViewById(R.id.image_view6));
+//        SimpleGif.with(this).load(filesPath[5]).into((ImageView) findViewById(R.id.image_view7));
+//        SimpleGif.with(this).load(filesPath[6]).into((ImageView) findViewById(R.id.image_view8));
+//        SimpleGif.with(this).load(filesPath[7]).into((ImageView) findViewById(R.id.image_view9));
+        new Thread(){
+            @Override
+            public void run() {
+                try {
+                    Thread.sleep(5000);
+                    runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            request.clear();
+//                            request.recycle();
+                            request1.clear();
+//                            request1.recycle();
+                        }
+                    });
+                    Thread.sleep(5000);
+                    runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            request.begin();
+//                            request1.begin();
+                        }
+                    });
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+        }.start();
         imageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -86,7 +103,6 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onDestroy() {
         Log.d(getLocalClassName(),"Destroy!");
-        isThreadNeedRunnine = false;
         super.onDestroy();
         ((SampleApplication)getApplication()).mWatcher.watch(this);
     }
@@ -94,6 +110,14 @@ public class MainActivity extends AppCompatActivity {
     private String setupSampleFile() {
         AssetManager assetManager = getAssets();
         String srcFile = "sample1.gif";
+        String destFile = getFilesDir().getAbsolutePath() + File.separator + srcFile;
+        copyFile(assetManager, srcFile, destFile);
+        return destFile;
+    }
+
+    private String setupLoveFile() {
+        AssetManager assetManager = getAssets();
+        String srcFile = "love.gif";
         String destFile = getFilesDir().getAbsolutePath() + File.separator + srcFile;
         copyFile(assetManager, srcFile, destFile);
         return destFile;
@@ -117,51 +141,5 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-//    public void onEncodeGIF(View v) {
-//        new Thread(new Runnable() {
-//            @Override
-//            public void run() {
-//                try {
-//                    encodeGIF();
-//                } catch (FileNotFoundException e) {
-//                    e.printStackTrace();
-//                } catch (IOException e) {
-//                    e.printStackTrace();
-//                }
-//            }
-//        }).start();
-//    }
 
-//    private void encodeGIF() throws IOException {
-//        String dstFile = "result.gif";
-//        final String filePath = Environment.getExternalStorageDirectory() + File.separator + dstFile;
-//        int width = 50;
-//        int height = 50;
-//        int delayMs = 100;
-//
-//        GifEncoder gifEncoder = new GifEncoder();
-//        gifEncoder.init(width, height, filePath, GifEncoder.EncodingType.ENCODING_TYPE_NORMAL_LOW_MEMORY);
-//        gifEncoder.setDither(useDither);
-//        Bitmap bitmap = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888);
-//        Canvas canvas = new Canvas(bitmap);
-//        Paint p = new Paint();
-//        int[] colors = new int[] {0xFFFF0000, 0xFFFFFF00, 0xFFFFFFFF};
-//        for (int color : colors) {
-//            p.setColor(color);
-//            canvas.drawRect(0, 0, width, height, p);
-//            gifEncoder.encodeFrame(bitmap, delayMs);
-//        }
-//        gifEncoder.close();
-//
-//        runOnUiThread(new Runnable() {
-//            @Override
-//            public void run() {
-//                Toast.makeText(MainActivity.this, "done : " + filePath, Toast.LENGTH_SHORT).show();
-//            }
-//        });
-//    }
-
-//    public void onDisableDithering(View v) {
-//        useDither = false;
-//    }
 }
