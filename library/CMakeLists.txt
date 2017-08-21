@@ -3,11 +3,25 @@
 # value of 3.4.0 or lower.
 
 cmake_minimum_required(VERSION 3.4.1)
+
+#符号表隐藏
+#c:
+#set(CMAKE_C_VISIBILITY_PRESET hidden)
+#c++
+#set(CMAKE_CXX_VISIBILITY_PRESET hidden)
+
 #add_compile_options(-std=c++03)
 # Creates and names a library, sets it as either STATIC
 # or SHARED, and provides the relative paths to its source code.
 # You can define multiple libraries, and CMake builds it for you.
 # Gradle automatically packages shared libraries with your APK.
+
+INCLUDE_DIRECTORIES(
+src/main/cpp/openssllib/include/openssl/
+)
+LINK_DIRECTORIES(
+src/main/cpp/openssllib/
+)
 
 #include_directories(D:/Android/WorkSpaseForAS/TestLibjpeg/app/libs)
 add_library( # Sets the name of the library.

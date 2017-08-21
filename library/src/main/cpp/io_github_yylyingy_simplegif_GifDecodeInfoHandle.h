@@ -12,8 +12,9 @@ extern "C" {
  * Method:    nativeInit
  * Signature: ()J
  */
-JNIEXPORT jlong JNICALL Java_io_github_yylyingy_simplegif_GifDecodeInfoHandle_nativeInit
-  (JNIEnv *, jobject);
+jlong  nativeInit (JNIEnv *env, jobject);
+//JNIEXPORT jlong JNICALL Java_io_github_yylyingy_simplegif_GifDecodeInfoHandle_nativeInit
+//  (JNIEnv *, jobject);
 
 /*
  * Class:     io_github_yylyingy_simplegif_GifDecodeInfoHandle
@@ -30,6 +31,14 @@ JNIEXPORT void JNICALL Java_io_github_yylyingy_simplegif_GifDecodeInfoHandle_nat
  */
 JNIEXPORT jboolean JNICALL Java_io_github_yylyingy_simplegif_GifDecodeInfoHandle_nativeLoad
   (JNIEnv *, jobject, jlong, jstring);
+
+/*
+ * Class:     io_github_yylyingy_simplegif_GifDecodeInfoHandle
+ * Method:    nativeLoadFromMemory
+ * Signature: (JLjava/lang/String;)Z
+ */
+JNIEXPORT jboolean JNICALL Java_io_github_yylyingy_simplegif_GifDecodeInfoHandle_nativeLoadFromMemory(
+        JNIEnv *env,jobject thiz,jlong handle,jbyteArray data,jint size);
 
 /*
  * Class:     io_github_yylyingy_simplegif_GifDecodeInfoHandle

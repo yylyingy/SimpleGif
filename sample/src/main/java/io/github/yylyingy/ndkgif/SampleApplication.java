@@ -14,6 +14,8 @@ public class SampleApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-        mWatcher = LeakCanary.install(this);
+//        if (!LeakCanary.isInAnalyzerProcess(this)){
+//            mWatcher = LeakCanary.install(this);
+//        }
     }
 }

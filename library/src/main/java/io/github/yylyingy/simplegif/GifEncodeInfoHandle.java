@@ -7,7 +7,7 @@ import java.io.FileNotFoundException;
 public class GifEncodeInfoHandle {
 
     static {
-        System.loadLibrary("androidndkgif");
+        System.loadLibrary("simple_gif");
     }
 
     public enum EncodingType {

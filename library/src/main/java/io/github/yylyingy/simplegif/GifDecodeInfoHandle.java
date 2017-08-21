@@ -8,17 +8,17 @@ public class GifDecodeInfoHandle {
         System.loadLibrary("simple_gif");
     }
 
-    private int currentFrameIndex;
-    private int nextFrameIndex;
+    private int         currentFrameIndex;
+    private int         nextFrameIndex;
 
-    private int width = 0;
-    private int height = 0;
+    private int         width = 0;
+    private int         height = 0;
 
-    private Bitmap   frame;
-    private int[] delays = new int[0];
-    private int frameNum;
-    private long handle;
-    private boolean isDestroy = true;
+    private Bitmap      frame;
+    private int[]       delays = new int[0];
+    private int         frameNum;
+    private long        handle;
+    private boolean     isDestroy = true;
 
     public synchronized boolean load(String fileName) {
         handle = nativeInit();
@@ -51,6 +51,7 @@ public class GifDecodeInfoHandle {
     public synchronized void destroy(){
         nativeClose(handle);
         isDestroy = true;
+        frame.recycle();
     }
 
     /**
@@ -115,6 +116,7 @@ public class GifDecodeInfoHandle {
     private native void nativeClose(long handle);
 
     private native boolean nativeLoad(long handle, String fileName);
+    private native boolean nativeLoadFromMemory(long handle,byte[]data,int size);
 
     private native int nativeGetFrameCount(long handle);
 

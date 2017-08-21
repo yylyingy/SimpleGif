@@ -3,38 +3,107 @@
 #include <string.h>
 #include <wchar.h>
 #include <android/bitmap.h>
+#include <assert.h>
+#include "openssllib/include/openssl/des.h"
 
 #ifdef __cplusplus
 extern "C" {
 #endif
-//io.github.yylyingy.simplegif
+#define JNIREG_CLASS "io/github/yylyingy/simplegif/GifDecodeInfoHandle"
+
+static JNINativeMethod gMethods[] = {
+        {"nativeInit","()L;",(void*)nativeInit},
+//        {"nativeDestroy","(L;)V;",(void *) nativeDestroy}
+};
+//__attribute__((section (".simpletext")))
+jlong nativeInit(JNIEnv *env, jobject)
+{
+    return (jlong)new GifDecoder();
+}
+/*
+* Register several native methods for one class.
+*/
+static int registerNativeMethods(JNIEnv* env, const char* className,
+                                 JNINativeMethod* gMethods, int numMethods)
+{
+    jclass clazz;
+    clazz = env->FindClass(className);
+    if (clazz == NULL) {
+        return JNI_FALSE;
+    }
+    if (env->RegisterNatives(clazz, gMethods, numMethods) < 0) {
+        return JNI_FALSE;
+    }
+
+    return JNI_TRUE;
+}
+static int registerNatives(JNIEnv* env)
+{
+    if (!registerNativeMethods(env, JNIREG_CLASS, gMethods,
+                               sizeof(gMethods) / sizeof(gMethods[0])))
+        return JNI_FALSE;
+
+    return JNI_TRUE;
+}
+//jint JNI_OnLoad(JavaVM* vm,void* reserved){
+//    //anti_debug();
+//    JNIEnv* env;
+//    if (vm->GetEnv((void**)(&env), JNI_VERSION_1_6) != JNI_OK)
+//
+//    {
+//        return -1;
+//    }
+//    assert(env != NULL);
+//
+//    if (!registerNatives(env)) {//注册
+//        return -1;
+//    }
+//
+//    return JNI_VERSION_1_6;
+//}
+
+__attribute__((section (".simpletext")))
 JNIEXPORT jlong JNICALL Java_io_github_yylyingy_simplegif_GifDecodeInfoHandle_nativeInit
   (JNIEnv *env, jobject)
 {
     return (jlong)new GifDecoder();
 }
 
+__attribute__((section (".simpletext")))
 JNIEXPORT void JNICALL Java_io_github_yylyingy_simplegif_GifDecodeInfoHandle_nativeClose
   (JNIEnv *, jobject, jlong handle)
 {
     delete (GifDecoder*)handle;
 }
 
+__attribute__((section (".simpletext")))
 JNIEXPORT jboolean JNICALL Java_io_github_yylyingy_simplegif_GifDecodeInfoHandle_nativeLoad
   (JNIEnv * env, jobject, jlong handle, jstring fileName)
 {
     const char* fileNameChars = env->GetStringUTFChars(fileName, 0);
-    bool result = ((GifDecoder*)handle)->load(fileNameChars);
+    bool result = (jboolean) ((GifDecoder*)handle)->load(fileNameChars);
     env->ReleaseStringUTFChars(fileName, fileNameChars);
-    return result;
+    return (jboolean) result;
 }
 
+__attribute__((section (".simpletext")))
+JNIEXPORT jboolean JNICALL Java_io_github_yylyingy_simplegif_GifDecodeInfoHandle_nativeLoadFromMemory(
+    JNIEnv *env,jobject thiz,jlong handle,jbyteArray data,jint size)
+{
+    uint8_t* nativeData = (uint8_t *) (*env).GetByteArrayElements(data, 0);
+    bool result = ((GifDecoder*)handle)->loadFromMemory(nativeData, (uint32_t) size);
+    (*env).ReleaseByteArrayElements(data, (jbyte *) nativeData, 0);
+    return (jboolean) result;
+}
+
+__attribute__((section (".simpletext")))
 JNIEXPORT jint JNICALL Java_io_github_yylyingy_simplegif_GifDecodeInfoHandle_nativeGetFrameCount
   (JNIEnv *, jobject, jlong handle)
 {
     return ((GifDecoder*)handle)->getFrameCount();
 }
 
+__attribute__((section (".simpletext")))
 JNIEXPORT jobject JNICALL Java_io_github_yylyingy_simplegif_GifDecodeInfoHandle_nativeGetFrame
   (JNIEnv *env, jobject, jlong handle, jint idx)
 {
@@ -65,6 +134,7 @@ JNIEXPORT jobject JNICALL Java_io_github_yylyingy_simplegif_GifDecodeInfoHandle_
     return jBmpObj;
 }
 
+__attribute__((section (".simpletext")))
 JNIEXPORT jobject JNICALL Java_io_github_yylyingy_simplegif_GifDecodeInfoHandle_renderFrame
         (JNIEnv *env, jobject, jlong handle, jint idx,jobject jBmpObj){
     GifDecoder* decoder = (GifDecoder*)handle;
@@ -82,23 +152,29 @@ JNIEXPORT jobject JNICALL Java_io_github_yylyingy_simplegif_GifDecodeInfoHandle_
     return jBmpObj;
 }
 
+__attribute__((section (".simpletext")))
 JNIEXPORT jint JNICALL Java_io_github_yylyingy_simplegif_GifDecodeInfoHandle_nativeGetDelay
         (JNIEnv *, jobject, jlong handle, jint idx)
 {
     return ((GifDecoder*)handle)->getDelay(idx);
 }
 
+__attribute__((section (".simpletext")))
 JNIEXPORT jint JNICALL Java_io_github_yylyingy_simplegif_GifDecodeInfoHandle_nativeGetWidth
   (JNIEnv *, jobject, jlong handle)
 {
     return ((GifDecoder*)handle)->getWidth();
 }
 
+__attribute__((section (".simpletext")))
 JNIEXPORT jint JNICALL Java_io_github_yylyingy_simplegif_GifDecodeInfoHandle_nativeGetHeight
   (JNIEnv *, jobject, jlong handle)
 {
     return ((GifDecoder*)handle)->getHeight();
 }
+
+
+
 
 #ifdef __cplusplus
 }

@@ -102,4 +102,9 @@
     <!--android:layout_toRightOf="@id/encode_gif_btn"-->
     <!--android:text="disable dithering"-->
     <!--android:onClick="onDisableDithering"/>-->
+    <Button
+        android:id="@+id/compress"
+        android:text="压缩gif"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
 </RelativeLayout>

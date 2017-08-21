@@ -78,7 +78,6 @@ public class RequestManager implements LifecycleListener{
     @Override
     public void onStart() {
         requestTracker.resumeRequests();
-
     }
 
     /**

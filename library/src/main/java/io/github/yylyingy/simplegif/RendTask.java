@@ -29,10 +29,8 @@ public class RendTask implements Request{
     private Runnable runnable = new Runnable() {
         @Override
         public void run() {
-
                 imageView.setImageBitmap(mDecodeInfo.frame());
                 handler.postDelayed(runnable, mDecodeInfo.delay());
-
         }
     };
     RendTask(String filePath, RequestTracker requestTracker){
